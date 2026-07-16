@@ -1,5 +1,7 @@
 import { cleanup } from '@testing-library/react';
 import { afterEach } from 'vite-plus/test';
+import 'antd-mobile/es/global';
+
 afterEach(() => {
   cleanup();
 });

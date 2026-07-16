@@ -2,6 +2,10 @@ import { beforeEach, describe, expect, it, vi } from 'vite-plus/test';
 
 const createBrowserRouterSpy = vi.fn((config: unknown) => config);
 
+vi.mock('../../layout', () => ({
+  default: () => null,
+}));
+
 vi.mock('react-router', async () => {
   const actual = await vi.importActual<typeof import('react-router')>('react-router');
   return {

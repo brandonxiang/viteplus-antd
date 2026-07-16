@@ -17,7 +17,10 @@ export default defineConfig({
     singleQuote: true,
   },
   lint: {
-    ignorePatterns: ['dist/', 'node_modules/'],
+    options: {
+      typeAware: true,
+      typeCheck: true,
+    },
   },
   staged: {
     '*.{js,jsx,ts,tsx}': ['vp lint --fix', 'vp fmt'],

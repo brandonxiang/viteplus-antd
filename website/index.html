@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- ==================================================================
      VitePlus Collections · 模板目录
      Bilingual (CN/EN) landing page · parchment design system
@@ -6,713 +6,1316 @@
      Static HTML — deploy to GitHub Pages
      ================================================================== -->
 <html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<title>VitePlus Collections · 模板目录</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="VitePlus Collections 是 Brandon Xiang 的模板目录，包含 React SPA、SSR、Mobile 和 Fastify 全栈四种开箱即用的模板。">
-<meta property="og:title" content="VitePlus Collections · 模板目录">
-<meta property="og:description" content="React SPA / SSR / Mobile / Fastify — 四种模板，一个统一工具链。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://brandonxiang.github.io/viteplus-collections/">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="https://brandonxiang.github.io/viteplus-collections/logo.svg">
-<link rel="canonical" href="https://brandonxiang.github.io/viteplus-collections/">
-<style>
-/* ========== Kami Tokens ========== */
-@font-face {
-  font-family: "TsangerJinKai02";
-  src: url("./TsangerJinKai02-W04.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TsangerJinKai02";
-  src: url("./TsangerJinKai02-W05.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+  <head>
+    <meta charset="utf-8" />
+    <title>VitePlus Collections · 模板目录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="VitePlus Collections 是 Brandon Xiang 的模板目录，包含 React SPA、SSR、Mobile 和 Fastify 全栈四种开箱即用的模板。"
+    />
+    <meta property="og:title" content="VitePlus Collections · 模板目录" />
+    <meta
+      property="og:description"
+      content="React SPA / SSR / Mobile / Fastify — 四种模板，一个统一工具链。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://brandonxiang.github.io/viteplus-collections/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://brandonxiang.github.io/viteplus-collections/logo.svg"
+    />
+    <link rel="canonical" href="https://brandonxiang.github.io/viteplus-collections/" />
+    <style>
+      /* ========== Kami Tokens ========== */
+      @font-face {
+        font-family: 'TsangerJinKai02';
+        src: url('./TsangerJinKai02-W04.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'TsangerJinKai02';
+        src: url('./TsangerJinKai02-W05.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
 
-:root {
-  --parchment:    #f5f4ed;
-  --ivory:        #faf9f5;
-  --warm-sand:    #e8e6dc;
-  --brand:        #1B365D;
-  --brand-light:  #2D5A8A;
-  --brand-tint:   #EEF2F7;
-  --near-black:   #141413;
-  --dark-warm:    #3d3d3a;
-  --olive:        #504e49;
-  --stone:        #6b6a64;
-  --border:       #e8e6dc;
-  --border-soft:  #e5e3d8;
-  --line:         #d8d5c8;
-}
+      :root {
+        --parchment: #f5f4ed;
+        --ivory: #faf9f5;
+        --warm-sand: #e8e6dc;
+        --brand: #1b365d;
+        --brand-light: #2d5a8a;
+        --brand-tint: #eef2f7;
+        --near-black: #141413;
+        --dark-warm: #3d3d3a;
+        --olive: #504e49;
+        --stone: #6b6a64;
+        --border: #e8e6dc;
+        --border-soft: #e5e3d8;
+        --line: #d8d5c8;
+      }
 
-/* ========== Language-aware font stacks ==========
+      /* ========== Language-aware font stacks ==========
    Matches JS-switched <html lang="zh-CN"> / <html lang="en">
    Kami spec: CN → TsangerJinKai02, EN → Charter
    ========== */
-html {
-  --serif: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", Georgia, serif;
-  --sans:  var(--serif);
-  --mono:  "JetBrains Mono", "SF Mono", "Fira Code", Consolas, Monaco, "TsangerJinKai02", "Source Han Serif SC", monospace;
-  --latin-ui: system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-html[lang="en"] {
-  --serif: Charter, Georgia, Palatino, "Times New Roman", serif;
-  --sans:  var(--serif);
-  --mono:  "JetBrains Mono", "SF Mono", "Fira Code", Consolas, Monaco, monospace;
-  --latin-ui: system-ui, -apple-system, "Segoe UI", sans-serif;
-}
+      html {
+        --serif:
+          'TsangerJinKai02', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Songti SC', 'STSong',
+          Georgia, serif;
+        --sans: var(--serif);
+        --mono:
+          'JetBrains Mono', 'SF Mono', 'Fira Code', Consolas, Monaco, 'TsangerJinKai02',
+          'Source Han Serif SC', monospace;
+        --latin-ui: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      html[lang='en'] {
+        --serif: Charter, Georgia, Palatino, 'Times New Roman', serif;
+        --sans: var(--serif);
+        --mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Consolas, Monaco, monospace;
+        --latin-ui: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; padding: 0;
-  background: var(--parchment);
-  color: var(--near-black);
-  font-family: var(--serif);
-  font-size: 15px;
-  line-height: 1.58;
-  letter-spacing: 0.4px;
-  -webkit-font-smoothing: antialiased;
-}
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--parchment);
+        color: var(--near-black);
+        font-family: var(--serif);
+        font-size: 15px;
+        line-height: 1.58;
+        letter-spacing: 0.4px;
+        -webkit-font-smoothing: antialiased;
+      }
 
-a { color: var(--brand); text-decoration: none; transition: color 0.15s; }
-a:hover { color: var(--brand-light); }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      a:hover {
+        color: var(--brand-light);
+      }
 
-.page { max-width: 1120px; margin: 0 auto; padding: 88px 64px 120px; }
+      .page {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 88px 64px 120px;
+      }
 
-/* ========== Lang Toggle ========== */
-.lang-bar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: flex-end; align-items: center; gap: 4px;
-  padding: 14px 64px;
-  background: rgba(245, 244, 237, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-soft);
-  font-family: var(--latin-ui);
-  font-size: 13px;
-}
-.lang-bar button {
-  appearance: none; border: none; background: transparent;
-  font-family: inherit; font-size: inherit; cursor: pointer;
-  padding: 6px 12px; border-radius: 999px;
-  color: var(--stone); transition: all 0.15s;
-}
-.lang-bar button:hover { color: var(--dark-warm); }
-.lang-bar button.active {
-  color: var(--ivory); background: var(--brand);
-  font-weight: 500;
-}
-.lang-bar .sep { color: var(--line); }
+      /* ========== Lang Toggle ========== */
+      .lang-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 4px;
+        padding: 14px 64px;
+        background: rgba(245, 244, 237, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-soft);
+        font-family: var(--latin-ui);
+        font-size: 13px;
+      }
+      .lang-bar button {
+        appearance: none;
+        border: none;
+        background: transparent;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 999px;
+        color: var(--stone);
+        transition: all 0.15s;
+      }
+      .lang-bar button:hover {
+        color: var(--dark-warm);
+      }
+      .lang-bar button.active {
+        color: var(--ivory);
+        background: var(--brand);
+        font-weight: 500;
+      }
+      .lang-bar .sep {
+        color: var(--line);
+      }
 
-[data-lang] { display: none; }
-[data-lang].active { display: block; }
-[data-lang].active-inline { display: inline; }
+      [data-lang] {
+        display: none;
+      }
+      [data-lang].active {
+        display: block;
+      }
+      [data-lang].active-inline {
+        display: inline;
+      }
 
-/* ========== Hero ========== */
-.hero {
-  padding-top: 24px;
-  padding-bottom: 48px;
-  border-bottom: 1px solid var(--border-soft);
-  margin-bottom: 80px;
-}
-.eyebrow {
-  display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  font-family: var(--latin-ui); font-size: 12px; font-weight: 500;
-  letter-spacing: 0.4px; text-transform: uppercase;
-  color: var(--stone); margin: 0 0 22px;
-}
-.hero-links { display: flex; gap: 12px; align-items: center; }
-.hero-links a { color: var(--stone); display: flex; align-items: center; }
-.hero-links a:hover { color: var(--dark-warm); }
+      /* ========== Hero ========== */
+      .hero {
+        padding-top: 24px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--border-soft);
+        margin-bottom: 80px;
+      }
+      .eyebrow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--latin-ui);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        color: var(--stone);
+        margin: 0 0 22px;
+      }
+      .hero-links {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .hero-links a {
+        color: var(--stone);
+        display: flex;
+        align-items: center;
+      }
+      .hero-links a:hover {
+        color: var(--dark-warm);
+      }
 
-.hero h1 {
-  font-family: var(--serif); font-weight: 500;
-  font-size: 88px; line-height: 1.05; letter-spacing: 0;
-  margin: 0 0 4px; color: var(--near-black);
-}
-.hero .subtitle {
-  font-family: var(--serif); font-weight: 500;
-  font-size: 26px; line-height: 1.2;
-  color: var(--brand); margin: 0 0 18px; letter-spacing: 0.2px;
-}
-.hero .tagline {
-  font-weight: 400; font-size: 20px; line-height: 1.55; letter-spacing: 0.4px;
-  color: var(--olive); margin: 0 0 28px; max-width: 820px;
-}
-.hero-tokens {
-  display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 32px;
-  font-family: var(--latin-ui); font-size: 13px; color: var(--stone);
-}
-.hero-tokens span { display: inline-flex; gap: 6px; align-items: baseline; }
-.hero-tokens b { color: var(--dark-warn); font-weight: 500; }
-.hero-cta { display: flex; align-items: center; gap: 24px; margin-top: 4px; }
+      .hero h1 {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 88px;
+        line-height: 1.05;
+        letter-spacing: 0;
+        margin: 0 0 4px;
+        color: var(--near-black);
+      }
+      .hero .subtitle {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 1.2;
+        color: var(--brand);
+        margin: 0 0 18px;
+        letter-spacing: 0.2px;
+      }
+      .hero .tagline {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.55;
+        letter-spacing: 0.4px;
+        color: var(--olive);
+        margin: 0 0 28px;
+        max-width: 820px;
+      }
+      .hero-tokens {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin: 0 0 32px;
+        font-family: var(--latin-ui);
+        font-size: 13px;
+        color: var(--stone);
+      }
+      .hero-tokens span {
+        display: inline-flex;
+        gap: 6px;
+        align-items: baseline;
+      }
+      .hero-tokens b {
+        color: var(--dark-warn);
+        font-weight: 500;
+      }
+      .hero-cta {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 4px;
+      }
 
-.btn-primary {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--brand); color: var(--ivory);
-  font-family: var(--latin-ui); font-weight: 500; font-size: 15px;
-  letter-spacing: 0.2px; padding: 13px 28px; border-radius: 999px;
-  border: 1.5px solid var(--brand);
-  transition: background 0.15s, border-color 0.15s, transform 0.15s;
-  cursor: pointer; min-width: 158px;
-}
-.btn-primary:hover {
-  background: var(--brand-light); border-color: var(--brand-light);
-  color: var(--ivory); transform: translateY(-1px);
-}
-.btn-ghost {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  font-family: var(--latin-ui); font-weight: 500; font-size: 15px;
-  color: var(--brand); background: transparent; padding: 13px 28px;
-  border-radius: 999px; border: 1.5px solid var(--brand);
-  transition: background 0.15s, color 0.15s, transform 0.15s;
-  cursor: pointer; min-width: 158px;
-}
-.btn-ghost:hover {
-  background: var(--brand-tint); transform: translateY(-1px);
-}
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--brand);
+        color: var(--ivory);
+        font-family: var(--latin-ui);
+        font-weight: 500;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+        padding: 13px 28px;
+        border-radius: 999px;
+        border: 1.5px solid var(--brand);
+        transition:
+          background 0.15s,
+          border-color 0.15s,
+          transform 0.15s;
+        cursor: pointer;
+        min-width: 158px;
+      }
+      .btn-primary:hover {
+        background: var(--brand-light);
+        border-color: var(--brand-light);
+        color: var(--ivory);
+        transform: translateY(-1px);
+      }
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-family: var(--latin-ui);
+        font-weight: 500;
+        font-size: 15px;
+        color: var(--brand);
+        background: transparent;
+        padding: 13px 28px;
+        border-radius: 999px;
+        border: 1.5px solid var(--brand);
+        transition:
+          background 0.15s,
+          color 0.15s,
+          transform 0.15s;
+        cursor: pointer;
+        min-width: 158px;
+      }
+      .btn-ghost:hover {
+        background: var(--brand-tint);
+        transform: translateY(-1px);
+      }
 
-/* ========== Section ========== */
-section { margin-bottom: 80px; }
-.section-title {
-  font-weight: 500; font-size: 34px; line-height: 1.2;
-  color: var(--near-black); margin: 0; letter-spacing: 1.2px;
-}
-.section-lede {
-  font-weight: 400; font-size: 17px; line-height: 1.55; letter-spacing: 0.4px;
-  color: var(--olive); margin: 14px 0 0;
-}
+      /* ========== Section ========== */
+      section {
+        margin-bottom: 80px;
+      }
+      .section-title {
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1.2;
+        color: var(--near-black);
+        margin: 0;
+        letter-spacing: 1.2px;
+      }
+      .section-lede {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.55;
+        letter-spacing: 0.4px;
+        color: var(--olive);
+        margin: 14px 0 0;
+      }
 
-/* ========== Template Cards ========== */
-.template-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-  margin-top: 24px;
-}
-.template-card {
-  border: 1px solid var(--border); border-radius: 8px;
-  background: var(--ivory); padding: 24px;
-  transition: box-shadow 0.2s;
-}
-.template-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.05); }
-.template-card .tc-tag {
-  display: inline-block;
-  background: #EEF2F7; color: var(--brand);
-  font-family: var(--latin-ui); font-size: 11px; font-weight: 600;
-  padding: 2px 8px; border-radius: 2px;
-  letter-spacing: 0.4px; text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.template-card h3 {
-  font-weight: 500; font-size: 22px; color: var(--near-black);
-  margin: 0 0 4px; letter-spacing: 0;
-}
-.template-card .tc-desc {
-  font-size: 14px; color: var(--olive); line-height: 1.5;
-  margin: 0 0 14px;
-}
-.template-card .tc-stack {
-  display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px;
-}
-.template-card .tc-stack span {
-  font-family: var(--latin-ui); font-size: 11px; color: var(--stone);
-  background: var(--parchment); padding: 3px 8px; border-radius: 3px;
-  border: 0.5px solid var(--border-soft);
-}
-.template-card .tc-link {
-  font-family: var(--latin-ui); font-size: 13px;
-}
-.template-card .tc-link a { color: var(--brand); }
-.template-card .tc-link a:hover { text-decoration: underline; }
+      /* ========== Template Cards ========== */
+      .template-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 24px;
+      }
+      .template-card {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--ivory);
+        padding: 24px;
+        transition: box-shadow 0.2s;
+      }
+      .template-card:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      }
+      .template-card .tc-tag {
+        display: inline-block;
+        background: #eef2f7;
+        color: var(--brand);
+        font-family: var(--latin-ui);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 2px;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .template-card h3 {
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--near-black);
+        margin: 0 0 4px;
+        letter-spacing: 0;
+      }
+      .template-card .tc-desc {
+        font-size: 14px;
+        color: var(--olive);
+        line-height: 1.5;
+        margin: 0 0 14px;
+      }
+      .template-card .tc-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 16px;
+      }
+      .template-card .tc-stack span {
+        font-family: var(--latin-ui);
+        font-size: 11px;
+        color: var(--stone);
+        background: var(--parchment);
+        padding: 3px 8px;
+        border-radius: 3px;
+        border: 0.5px solid var(--border-soft);
+      }
+      .template-card .tc-link {
+        font-family: var(--latin-ui);
+        font-size: 13px;
+      }
+      .template-card .tc-link a {
+        color: var(--brand);
+      }
+      .template-card .tc-link a:hover {
+        text-decoration: underline;
+      }
 
-/* ========== Matrix ========== */
-.matrix-wrap { overflow-x: auto; margin-top: 24px; }
-.matrix {
-  width: 100%; border-collapse: collapse;
-  font-size: 14px; margin: 0;
-}
-.matrix th {
-  text-align: left; font-weight: 500; color: var(--dark-warm);
-  padding: 10px 14px; border-bottom: 1pt solid var(--border);
-  font-family: var(--latin-ui); font-size: 12px; letter-spacing: 0.3px; text-transform: uppercase;
-}
-.matrix th:first-child { padding-left: 0; width: 180px; }
-.matrix td {
-  padding: 10px 14px; border-bottom: 0.3pt solid var(--border-soft);
-  vertical-align: top;
-}
-.matrix td:first-child {
-  font-family: var(--serif); font-weight: 500; color: var(--near-black);
-  padding-left: 0;
-}
-.matrix .check { color: var(--brand); font-weight: 500; }
-.matrix .dash { color: var(--line); }
+      /* ========== Matrix ========== */
+      .matrix-wrap {
+        overflow-x: auto;
+        margin-top: 24px;
+      }
+      .matrix {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin: 0;
+      }
+      .matrix th {
+        text-align: left;
+        font-weight: 500;
+        color: var(--dark-warm);
+        padding: 10px 14px;
+        border-bottom: 1pt solid var(--border);
+        font-family: var(--latin-ui);
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+      .matrix th:first-child {
+        padding-left: 0;
+        width: 180px;
+      }
+      .matrix td {
+        padding: 10px 14px;
+        border-bottom: 0.3pt solid var(--border-soft);
+        vertical-align: top;
+      }
+      .matrix td:first-child {
+        font-family: var(--serif);
+        font-weight: 500;
+        color: var(--near-black);
+        padding-left: 0;
+      }
+      .matrix .check {
+        color: var(--brand);
+        font-weight: 500;
+      }
+      .matrix .dash {
+        color: var(--line);
+      }
 
-/* ========== Workflow ========== */
-.workflow-steps {
-  list-style: none; margin: 24px 0 0; padding: 0;
-  border-top: 1px solid var(--border-soft);
-}
-.workflow-steps li {
-  display: grid; grid-template-columns: 40px 1fr;
-  gap: 14px; padding: 20px 0;
-  border-bottom: 1px solid var(--border-soft);
-  align-items: baseline;
-}
-.workflow-steps .n {
-  font-family: var(--serif); font-weight: 500; font-size: 20px;
-  color: var(--brand); line-height: 1;
-}
-.workflow-steps .body b {
-  display: block; font-weight: 500; font-size: 15px;
-  color: var(--near-black); margin-bottom: 4px; letter-spacing: 0.1px;
-}
-.workflow-steps .body span {
-  font-size: 14px; color: var(--olive); line-height: 1.5; letter-spacing: 0.4px;
-}
-.workflow-steps .body pre {
-  margin: 8px 0 0; font-family: var(--mono); font-size: 13px;
-  background: var(--ivory); border: 1px solid var(--border);
-  border-radius: 6px; padding: 10px 14px; overflow-x: auto;
-  color: var(--near-black); line-height: 1.5;
-}
+      /* ========== Workflow ========== */
+      .workflow-steps {
+        list-style: none;
+        margin: 24px 0 0;
+        padding: 0;
+        border-top: 1px solid var(--border-soft);
+      }
+      .workflow-steps li {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 14px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border-soft);
+        align-items: baseline;
+      }
+      .workflow-steps .n {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--brand);
+        line-height: 1;
+      }
+      .workflow-steps .body b {
+        display: block;
+        font-weight: 500;
+        font-size: 15px;
+        color: var(--near-black);
+        margin-bottom: 4px;
+        letter-spacing: 0.1px;
+      }
+      .workflow-steps .body span {
+        font-size: 14px;
+        color: var(--olive);
+        line-height: 1.5;
+        letter-spacing: 0.4px;
+      }
+      .workflow-steps .body pre {
+        margin: 8px 0 0;
+        font-family: var(--mono);
+        font-size: 13px;
+        background: var(--ivory);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px 14px;
+        overflow-x: auto;
+        color: var(--near-black);
+        line-height: 1.5;
+      }
 
-/* ========== FAQ ========== */
-.faq-list { margin-top: 24px; }
-.faq-pair { margin-bottom: 24px; }
-.faq-pair:last-child { margin-bottom: 0; }
-.faq-pair dt {
-  font-weight: 500; font-size: 16px; color: var(--near-black);
-  margin: 0 0 6px; letter-spacing: 0.1px;
-}
-.faq-pair dd {
-  font-size: 14px; line-height: 1.55; letter-spacing: 0.4px;
-  color: var(--olive); margin: 0;
-}
-.faq-pair code {
-  font-family: var(--mono); font-size: 12px; color: var(--brand);
-  background: var(--brand-tint); padding: 1px 6px; border-radius: 3px;
-}
+      /* ========== FAQ ========== */
+      .faq-list {
+        margin-top: 24px;
+      }
+      .faq-pair {
+        margin-bottom: 24px;
+      }
+      .faq-pair:last-child {
+        margin-bottom: 0;
+      }
+      .faq-pair dt {
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--near-black);
+        margin: 0 0 6px;
+        letter-spacing: 0.1px;
+      }
+      .faq-pair dd {
+        font-size: 14px;
+        line-height: 1.55;
+        letter-spacing: 0.4px;
+        color: var(--olive);
+        margin: 0;
+      }
+      .faq-pair code {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--brand);
+        background: var(--brand-tint);
+        padding: 1px 6px;
+        border-radius: 3px;
+      }
 
-/* ========== Footer ========== */
-footer.foot {
-  margin-top: 32px; padding-top: 40px;
-  border-top: 1px solid var(--border-soft);
-  display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;
-  font-size: 13px; color: var(--stone);
-}
-.foot .mark {
-  display: grid; grid-template-columns: 48px auto;
-  grid-template-rows: auto auto; column-gap: 14px; align-items: start;
-}
-.foot .mark img {
-  grid-row: 1 / span 2; width: 48px; height: 48px;
-  flex-shrink: 0; border-radius: 8px;
-}
-.foot .mark .wm-name {
-  font-weight: 500; font-size: 22px; color: var(--near-black);
-  line-height: 1.1; letter-spacing: 0;
-}
-.foot .mark .wm-line { font-size: 13px; color: var(--olive); margin-top: 2px; }
-.foot .colophon { text-align: right; max-width: 480px; }
-.foot .colophon .links {
-  font-family: var(--latin-ui); color: var(--dark-warm);
-  margin-bottom: 16px; line-height: 1.55;
-}
-.foot .colophon .links a { color: var(--dark-warm); }
-.foot .colophon .links a:hover { color: var(--brand); }
-.foot .colophon .ethos {
-  color: var(--olive); font-style: italic; line-height: 1.55; max-width: 360px; margin-left: auto;
-}
+      /* ========== Footer ========== */
+      footer.foot {
+        margin-top: 32px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-soft);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 48px;
+        font-size: 13px;
+        color: var(--stone);
+      }
+      .foot .mark {
+        display: grid;
+        grid-template-columns: 48px auto;
+        grid-template-rows: auto auto;
+        column-gap: 14px;
+        align-items: start;
+      }
+      .foot .mark img {
+        grid-row: 1 / span 2;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 8px;
+      }
+      .foot .mark .wm-name {
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--near-black);
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+      .foot .mark .wm-line {
+        font-size: 13px;
+        color: var(--olive);
+        margin-top: 2px;
+      }
+      .foot .colophon {
+        text-align: right;
+        max-width: 480px;
+      }
+      .foot .colophon .links {
+        font-family: var(--latin-ui);
+        color: var(--dark-warm);
+        margin-bottom: 16px;
+        line-height: 1.55;
+      }
+      .foot .colophon .links a {
+        color: var(--dark-warm);
+      }
+      .foot .colophon .links a:hover {
+        color: var(--brand);
+      }
+      .foot .colophon .ethos {
+        color: var(--olive);
+        font-style: italic;
+        line-height: 1.55;
+        max-width: 360px;
+        margin-left: auto;
+      }
 
-/* ========== Responsive ========== */
-@media (max-width: 880px) {
-  .page { padding: 72px 32px 80px; }
-  .lang-bar { padding: 14px 32px; }
-  .hero { margin-bottom: 56px; padding-bottom: 32px; }
-  .hero h1 { font-size: 56px; }
-  .hero .subtitle { font-size: 22px; }
-  .hero .tagline { font-size: 17px; }
-  section { margin-bottom: 56px; }
-  .section-title { font-size: 30px; letter-spacing: 0.8px; }
-  .template-grid { grid-template-columns: 1fr; }
-  .matrix th, .matrix td { padding: 8px 10px; }
-  .matrix th:first-child { width: auto; min-width: 120px; }
-  .foot { flex-direction: column; align-items: flex-start; gap: 32px; padding-top: 32px; margin-top: 48px; }
-  .foot .colophon { text-align: left; max-width: 100%; }
-  .foot .colophon .ethos { margin-left: 0; }
-}
-@media (max-width: 480px) {
-  .hero h1 { font-size: 40px; }
-  .hero .subtitle { font-size: 18px; }
-  .hero .tagline { font-size: 16px; }
-  .hero-cta { flex-direction: row; align-items: center; gap: 12px; }
-  .btn-primary, .btn-ghost { min-width: 0; flex: 1; padding: 13px 16px; justify-content: center; }
-  .lang-bar { padding: 12px 16px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-</style>
-</head>
-<body>
+      /* ========== Responsive ========== */
+      @media (max-width: 880px) {
+        .page {
+          padding: 72px 32px 80px;
+        }
+        .lang-bar {
+          padding: 14px 32px;
+        }
+        .hero {
+          margin-bottom: 56px;
+          padding-bottom: 32px;
+        }
+        .hero h1 {
+          font-size: 56px;
+        }
+        .hero .subtitle {
+          font-size: 22px;
+        }
+        .hero .tagline {
+          font-size: 17px;
+        }
+        section {
+          margin-bottom: 56px;
+        }
+        .section-title {
+          font-size: 30px;
+          letter-spacing: 0.8px;
+        }
+        .template-grid {
+          grid-template-columns: 1fr;
+        }
+        .matrix th,
+        .matrix td {
+          padding: 8px 10px;
+        }
+        .matrix th:first-child {
+          width: auto;
+          min-width: 120px;
+        }
+        .foot {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 32px;
+          padding-top: 32px;
+          margin-top: 48px;
+        }
+        .foot .colophon {
+          text-align: left;
+          max-width: 100%;
+        }
+        .foot .colophon .ethos {
+          margin-left: 0;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 40px;
+        }
+        .hero .subtitle {
+          font-size: 18px;
+        }
+        .hero .tagline {
+          font-size: 16px;
+        }
+        .hero-cta {
+          flex-direction: row;
+          align-items: center;
+          gap: 12px;
+        }
+        .btn-primary,
+        .btn-ghost {
+          min-width: 0;
+          flex: 1;
+          padding: 13px 16px;
+          justify-content: center;
+        }
+        .lang-bar {
+          padding: 12px 16px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========== Language Bar ========== -->
+    <nav class="lang-bar">
+      <button class="active" data-lang-btn="cn">中文</button>
+      <span class="sep">·</span>
+      <button data-lang-btn="en">English</button>
+    </nav>
 
-<!-- ========== Language Bar ========== -->
-<nav class="lang-bar">
-  <button class="active" data-lang-btn="cn">中文</button>
-  <span class="sep">·</span>
-  <button data-lang-btn="en">English</button>
-</nav>
-
-<main class="page">
-
-  <!-- ========== Hero ========== -->
-  <header class="hero">
-
-    <!-- CN -->
-    <div data-lang="cn" class="active">
-      <div class="eyebrow">
-        <span>模板目录 · <a href="https://github.com/brandonxiang/viteplus-collections/releases" style="color:var(--brand);font-weight:600;">v1.0.0</a></span>
-        <span class="hero-links">
-          <a href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub</a>
-        </span>
-      </div>
-      <h1>VitePlus<br>Collections</h1>
-      <p class="subtitle">四种模板 · 一个统一工具链</p>
-      <p class="tagline">开箱即用的 React SPA、服务端渲染、移动端、Fastify 全栈模板，全部由 Vite+ 统一管理开发、构建、测试和代码质量。</p>
-      <div class="hero-tokens">
-        <span><b>4</b> 模板</span>
-        <span><b>Vite+</b> 工具链</span>
-        <span><b>React 19</b> · <b>Ant Design 6</b> · <b>Fastify 5</b></span>
-        <span><b>Lighthouse 100</b> 基线</span>
-      </div>
-      <div class="hero-cta">
-        <a class="btn-ghost" href="#templates">浏览模板</a>
-        <a class="btn-primary" href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub 仓库</a>
-      </div>
-    </div>
-
-    <!-- EN -->
-    <div data-lang="en">
-      <div class="eyebrow">
-        <span>Template Catalog · <a href="https://github.com/brandonxiang/viteplus-collections/releases" style="color:var(--brand);font-weight:600;">v1.0.0</a></span>
-        <span class="hero-links">
-          <a href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub</a>
-        </span>
-      </div>
-      <h1>VitePlus<br>Collections</h1>
-      <p class="subtitle">Four Templates · One Toolchain</p>
-      <p class="tagline">Production-ready starters for React SPA, SSR, Mobile, and Fastify full-stack apps — all unified by Vite+ for dev, build, test, and code quality.</p>
-      <div class="hero-tokens">
-        <span><b>4</b> templates</span>
-        <span><b>Vite+</b> toolchain</span>
-        <span><b>React 19</b> · <b>Ant Design 6</b> · <b>Fastify 5</b></span>
-        <span><b>Lighthouse 100</b> baseline</span>
-      </div>
-      <div class="hero-cta">
-        <a class="btn-ghost" href="#templates">Browse Templates</a>
-        <a class="btn-primary" href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub Repo</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ========== Templates ========== -->
-  <section id="templates">
-
-    <div data-lang="cn" class="active">
-      <h2 class="section-title">模板</h2>
-      <p class="section-lede">四种场景，一种体验。每个模板都经过 Lighthouse 100 调优，支持 TypeScript，开箱即用。</p>
-    </div>
-    <div data-lang="en">
-      <h2 class="section-title">Templates</h2>
-      <p class="section-lede">Four scenarios, one experience. Every template is Lighthouse 100 tuned, TypeScript-ready, and production-grade from the first commit.</p>
-    </div>
-
-    <div class="template-grid">
-
-      <!-- viteplus-antd -->
-      <div class="template-card">
-        <span class="tc-tag">SPA</span>
-        <h3 data-lang="cn" class="active">viteplus-antd</h3>
-        <h3 data-lang="en">viteplus-antd</h3>
-        <div data-lang="cn" class="active"><p class="tc-desc">React SPA 管理后台模板，集成 Ant Design 6、React Router Data Mode、TypeScript，适合快速搭建中后台系统。</p></div>
-        <div data-lang="en"><p class="tc-desc">React SPA admin dashboard with Ant Design 6, React Router Data Mode, and TypeScript. Ideal for internal tools and back-office systems.</p></div>
-        <div class="tc-stack">
-          <span>React 19</span><span>React Router 7</span><span>Ant Design 6</span><span>Vite+</span><span>TypeScript</span>
+    <main class="page">
+      <!-- ========== Hero ========== -->
+      <header class="hero">
+        <!-- CN -->
+        <div data-lang="cn" class="active">
+          <div class="eyebrow">
+            <span
+              >模板目录 ·
+              <a
+                href="https://github.com/brandonxiang/viteplus-collections/releases"
+                style="color: var(--brand); font-weight: 600"
+                >v1.0.0</a
+              ></span
+            >
+            <span class="hero-links">
+              <a
+                href="https://github.com/brandonxiang/viteplus-collections"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </span>
+          </div>
+          <h1>VitePlus<br />Collections</h1>
+          <p class="subtitle">四种模板 · 一个统一工具链</p>
+          <p class="tagline">
+            开箱即用的 React SPA、服务端渲染、移动端、Fastify 全栈模板，全部由 Vite+
+            统一管理开发、构建、测试和代码质量。
+          </p>
+          <div class="hero-tokens">
+            <span><b>4</b> 模板</span>
+            <span><b>Vite+</b> 工具链</span>
+            <span><b>React 19</b> · <b>Ant Design 6</b> · <b>Fastify 5</b></span>
+            <span><b>Lighthouse 100</b> 基线</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn-ghost" href="#templates">浏览模板</a>
+            <a
+              class="btn-primary"
+              href="https://github.com/brandonxiang/viteplus-collections"
+              target="_blank"
+              rel="noopener"
+              >GitHub 仓库</a
+            >
+          </div>
         </div>
-        <div class="tc-link" data-lang="cn"><a href="https://github.com/brandonxiang/viteplus-antd" target="_blank" rel="noopener">查看仓库 →</a></div>
-        <div class="tc-link" data-lang="en"><a href="https://github.com/brandonxiang/viteplus-antd" target="_blank" rel="noopener">View Repo →</a></div>
-      </div>
 
-      <!-- viteplus-antd-ssr -->
-      <div class="template-card">
-        <span class="tc-tag">SSR / SSG</span>
-        <h3 data-lang="cn" class="active">viteplus-antd-ssr</h3>
-        <h3 data-lang="en">viteplus-antd-ssr</h3>
-        <div data-lang="cn" class="active"><p class="tc-desc">React Router Framework 模式模板，支持服务端渲染 (SSR) 和静态生成 (SSG)，默认预渲染。集成 Ant Design 6 后台 Shell。</p></div>
-        <div data-lang="en"><p class="tc-desc">React Router Framework starter with SSR and SSG modes. Prerendered by default for Lighthouse-perfect static sites, SSR-ready for runtime rendering.</p></div>
-        <div class="tc-stack">
-          <span>React 19</span><span>React Router 7 (framework)</span><span>Ant Design 6</span><span>SSR/SSG</span><span>Vite+</span>
+        <!-- EN -->
+        <div data-lang="en">
+          <div class="eyebrow">
+            <span
+              >Template Catalog ·
+              <a
+                href="https://github.com/brandonxiang/viteplus-collections/releases"
+                style="color: var(--brand); font-weight: 600"
+                >v1.0.0</a
+              ></span
+            >
+            <span class="hero-links">
+              <a
+                href="https://github.com/brandonxiang/viteplus-collections"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </span>
+          </div>
+          <h1>VitePlus<br />Collections</h1>
+          <p class="subtitle">Four Templates · One Toolchain</p>
+          <p class="tagline">
+            Production-ready starters for React SPA, SSR, Mobile, and Fastify full-stack apps — all
+            unified by Vite+ for dev, build, test, and code quality.
+          </p>
+          <div class="hero-tokens">
+            <span><b>4</b> templates</span>
+            <span><b>Vite+</b> toolchain</span>
+            <span><b>React 19</b> · <b>Ant Design 6</b> · <b>Fastify 5</b></span>
+            <span><b>Lighthouse 100</b> baseline</span>
+          </div>
+          <div class="hero-cta">
+            <a class="btn-ghost" href="#templates">Browse Templates</a>
+            <a
+              class="btn-primary"
+              href="https://github.com/brandonxiang/viteplus-collections"
+              target="_blank"
+              rel="noopener"
+              >GitHub Repo</a
+            >
+          </div>
         </div>
-        <div class="tc-link" data-lang="cn"><a href="https://github.com/brandonxiang/viteplus-antd-ssr" target="_blank" rel="noopener">查看仓库 →</a></div>
-        <div class="tc-link" data-lang="en"><a href="https://github.com/brandonxiang/viteplus-antd-ssr" target="_blank" rel="noopener">View Repo →</a></div>
-      </div>
+      </header>
 
-      <!-- viteplus-antd-mobile -->
-      <div class="template-card">
-        <span class="tc-tag">Mobile</span>
-        <h3 data-lang="cn" class="active">viteplus-antd-mobile</h3>
-        <h3 data-lang="en">viteplus-antd-mobile</h3>
-        <div data-lang="cn" class="active"><p class="tc-desc">移动端优先的 React 应用模板，集成 antd-mobile 5，Lighthouse 100 全项满分，适合 H5 移动站点。</p></div>
-        <div data-lang="en"><p class="tc-desc">Mobile-first React app starter with antd-mobile 5. Lighthouse 100 across all categories. Perfect for H5 mobile web applications.</p></div>
-        <div class="tc-stack">
-          <span>React 19</span><span>React Router 7</span><span>antd-mobile 5</span><span>Mobile-first</span><span>Vite+</span>
+      <!-- ========== Templates ========== -->
+      <section id="templates">
+        <div data-lang="cn" class="active">
+          <h2 class="section-title">模板</h2>
+          <p class="section-lede">
+            四种场景，一种体验。每个模板都经过 Lighthouse 100 调优，支持 TypeScript，开箱即用。
+          </p>
         </div>
-        <div class="tc-link" data-lang="cn"><a href="https://github.com/brandonxiang/viteplus-antd-mobile" target="_blank" rel="noopener">查看仓库 →</a></div>
-        <div class="tc-link" data-lang="en"><a href="https://github.com/brandonxiang/viteplus-antd-mobile" target="_blank" rel="noopener">View Repo →</a></div>
-      </div>
-
-      <!-- viteplus-fastify -->
-      <div class="template-card">
-        <span class="tc-tag">Full-Stack</span>
-        <h3 data-lang="cn" class="active">viteplus-fastify</h3>
-        <h3 data-lang="en">viteplus-fastify</h3>
-        <div data-lang="cn" class="active"><p class="tc-desc">Fastify 全栈启动模板，集成 Swagger/OpenAPI、Knex.js、Redis、CORS、健康检查，带 Hacker News 演示页面。</p></div>
-        <div data-lang="en"><p class="tc-desc">Fastify full-stack starter with Swagger/OpenAPI, Knex.js, Redis, CORS, health checks, and a live Hacker News demo page.</p></div>
-        <div class="tc-stack">
-          <span>Fastify 5</span><span>TypeScript</span><span>Swagger/OpenAPI</span><span>Knex.js + Redis</span><span>Vite+</span>
+        <div data-lang="en">
+          <h2 class="section-title">Templates</h2>
+          <p class="section-lede">
+            Four scenarios, one experience. Every template is Lighthouse 100 tuned,
+            TypeScript-ready, and production-grade from the first commit.
+          </p>
         </div>
-        <div class="tc-link" data-lang="cn"><a href="https://github.com/brandonxiang/viteplus-fastify" target="_blank" rel="noopener">查看仓库 →</a></div>
-        <div class="tc-link" data-lang="en"><a href="https://github.com/brandonxiang/viteplus-fastify" target="_blank" rel="noopener">View Repo →</a></div>
-      </div>
 
-    </div>
-  </section>
+        <div class="template-grid">
+          <!-- viteplus-antd -->
+          <div class="template-card">
+            <span class="tc-tag">SPA</span>
+            <h3 data-lang="cn" class="active">viteplus-antd</h3>
+            <h3 data-lang="en">viteplus-antd</h3>
+            <div data-lang="cn" class="active">
+              <p class="tc-desc">
+                React SPA 管理后台模板，集成 Ant Design 6、React Router Data
+                Mode、TypeScript，适合快速搭建中后台系统。
+              </p>
+            </div>
+            <div data-lang="en">
+              <p class="tc-desc">
+                React SPA admin dashboard with Ant Design 6, React Router Data Mode, and TypeScript.
+                Ideal for internal tools and back-office systems.
+              </p>
+            </div>
+            <div class="tc-stack">
+              <span>React 19</span><span>React Router 7</span><span>Ant Design 6</span
+              ><span>Vite+</span><span>TypeScript</span>
+            </div>
+            <div class="tc-link" data-lang="cn">
+              <a href="https://github.com/brandonxiang/viteplus-antd" target="_blank" rel="noopener"
+                >查看仓库 →</a
+              >
+            </div>
+            <div class="tc-link" data-lang="en">
+              <a href="https://github.com/brandonxiang/viteplus-antd" target="_blank" rel="noopener"
+                >View Repo →</a
+              >
+            </div>
+          </div>
 
-  <!-- ========== Capability Matrix ========== -->
-  <section>
-    <div data-lang="cn" class="active"><h2 class="section-title">能力矩阵</h2>
-    <p class="section-lede">一目了然对比四种模板的核心能力，找到最适合你的起点。</p></div>
-    <div data-lang="en"><h2 class="section-title">Capability Matrix</h2>
-    <p class="section-lede">Compare four templates at a glance to find the right starting point for your project.</p></div>
+          <!-- viteplus-antd-ssr -->
+          <div class="template-card">
+            <span class="tc-tag">SSR / SSG</span>
+            <h3 data-lang="cn" class="active">viteplus-antd-ssr</h3>
+            <h3 data-lang="en">viteplus-antd-ssr</h3>
+            <div data-lang="cn" class="active">
+              <p class="tc-desc">
+                React Router Framework 模式模板，支持服务端渲染 (SSR) 和静态生成
+                (SSG)，默认预渲染。集成 Ant Design 6 后台 Shell。
+              </p>
+            </div>
+            <div data-lang="en">
+              <p class="tc-desc">
+                React Router Framework starter with SSR and SSG modes. Prerendered by default for
+                Lighthouse-perfect static sites, SSR-ready for runtime rendering.
+              </p>
+            </div>
+            <div class="tc-stack">
+              <span>React 19</span><span>React Router 7 (framework)</span><span>Ant Design 6</span
+              ><span>SSR/SSG</span><span>Vite+</span>
+            </div>
+            <div class="tc-link" data-lang="cn">
+              <a
+                href="https://github.com/brandonxiang/viteplus-antd-ssr"
+                target="_blank"
+                rel="noopener"
+                >查看仓库 →</a
+              >
+            </div>
+            <div class="tc-link" data-lang="en">
+              <a
+                href="https://github.com/brandonxiang/viteplus-antd-ssr"
+                target="_blank"
+                rel="noopener"
+                >View Repo →</a
+              >
+            </div>
+          </div>
 
-    <div class="matrix-wrap">
-      <table class="matrix">
-        <thead>
-          <tr>
-            <th><span data-lang="cn">能力</span><span data-lang="en">Capability</span></th>
-            <th>Antd SPA</th>
-            <th>Antd SSR</th>
-            <th>Antd Mobile</th>
-            <th>Fastify</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span data-lang="cn">React 19</span><span data-lang="en">React 19</span></td>
-            <td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="dash">—</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">Ant Design 6</span><span data-lang="en">Ant Design 6</span></td>
-            <td class="check">✓</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">antd-mobile</span><span data-lang="en">antd-mobile</span></td>
-            <td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">SSR / SSG</span><span data-lang="en">SSR / SSG</span></td>
-            <td class="dash">—</td><td class="check">✓</td><td class="dash">—</td><td class="dash">—</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">移动端优先</span><span data-lang="en">Mobile-first</span></td>
-            <td class="dash">—</td><td class="dash">—</td><td class="check">✓</td><td class="dash">—</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">Fastify 服务端</span><span data-lang="en">Fastify Server</span></td>
-            <td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">Swagger / OpenAPI</span><span data-lang="en">Swagger / OpenAPI</span></td>
-            <td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">数据库集成</span><span data-lang="en">Database (Knex)</span></td>
-            <td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">Redis 缓存</span><span data-lang="en">Redis Cache</span></td>
-            <td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">Vitest 测试</span><span data-lang="en">Vitest Setup</span></td>
-            <td class="check">✓</td><td class="check">✓</td><td class="dash">—</td><td class="check">✓</td>
-          </tr>
-          <tr>
-            <td><span data-lang="cn">Lighthouse 100</span><span data-lang="en">Lighthouse 100</span></td>
-            <td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="dash">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+          <!-- viteplus-antd-mobile -->
+          <div class="template-card">
+            <span class="tc-tag">Mobile</span>
+            <h3 data-lang="cn" class="active">viteplus-antd-mobile</h3>
+            <h3 data-lang="en">viteplus-antd-mobile</h3>
+            <div data-lang="cn" class="active">
+              <p class="tc-desc">
+                移动端优先的 React 应用模板，集成 antd-mobile 5，Lighthouse 100 全项满分，适合 H5
+                移动站点。
+              </p>
+            </div>
+            <div data-lang="en">
+              <p class="tc-desc">
+                Mobile-first React app starter with antd-mobile 5. Lighthouse 100 across all
+                categories. Perfect for H5 mobile web applications.
+              </p>
+            </div>
+            <div class="tc-stack">
+              <span>React 19</span><span>React Router 7</span><span>antd-mobile 5</span
+              ><span>Mobile-first</span><span>Vite+</span>
+            </div>
+            <div class="tc-link" data-lang="cn">
+              <a
+                href="https://github.com/brandonxiang/viteplus-antd-mobile"
+                target="_blank"
+                rel="noopener"
+                >查看仓库 →</a
+              >
+            </div>
+            <div class="tc-link" data-lang="en">
+              <a
+                href="https://github.com/brandonxiang/viteplus-antd-mobile"
+                target="_blank"
+                rel="noopener"
+                >View Repo →</a
+              >
+            </div>
+          </div>
 
-  <!-- ========== Workflow / Install ========== -->
-  <section>
+          <!-- viteplus-fastify -->
+          <div class="template-card">
+            <span class="tc-tag">Full-Stack</span>
+            <h3 data-lang="cn" class="active">viteplus-fastify</h3>
+            <h3 data-lang="en">viteplus-fastify</h3>
+            <div data-lang="cn" class="active">
+              <p class="tc-desc">
+                Fastify 全栈启动模板，集成 Swagger/OpenAPI、Knex.js、Redis、CORS、健康检查，带
+                Hacker News 演示页面。
+              </p>
+            </div>
+            <div data-lang="en">
+              <p class="tc-desc">
+                Fastify full-stack starter with Swagger/OpenAPI, Knex.js, Redis, CORS, health
+                checks, and a live Hacker News demo page.
+              </p>
+            </div>
+            <div class="tc-stack">
+              <span>Fastify 5</span><span>TypeScript</span><span>Swagger/OpenAPI</span
+              ><span>Knex.js + Redis</span><span>Vite+</span>
+            </div>
+            <div class="tc-link" data-lang="cn">
+              <a
+                href="https://github.com/brandonxiang/viteplus-fastify"
+                target="_blank"
+                rel="noopener"
+                >查看仓库 →</a
+              >
+            </div>
+            <div class="tc-link" data-lang="en">
+              <a
+                href="https://github.com/brandonxiang/viteplus-fastify"
+                target="_blank"
+                rel="noopener"
+                >View Repo →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div data-lang="cn" class="active">
-      <h2 class="section-title">快速开始</h2>
-      <p class="section-lede">使用 Vite+ 的统一 CLI，一条命令创建项目，运行即可。</p>
-    </div>
-    <div data-lang="en">
-      <h2 class="section-title">Getting Started</h2>
-      <p class="section-lede">Create a project with one command using the Vite+ unified CLI, then run it immediately.</p>
-    </div>
+      <!-- ========== Capability Matrix ========== -->
+      <section>
+        <div data-lang="cn" class="active">
+          <h2 class="section-title">能力矩阵</h2>
+          <p class="section-lede">一目了然对比四种模板的核心能力，找到最适合你的起点。</p>
+        </div>
+        <div data-lang="en">
+          <h2 class="section-title">Capability Matrix</h2>
+          <p class="section-lede">
+            Compare four templates at a glance to find the right starting point for your project.
+          </p>
+        </div>
 
-    <ol class="workflow-steps">
-      <li>
-        <span class="n">1</span>
-        <span class="body">
-          <div data-lang="cn" class="active"><b>安装 Vite+</b><span>全局安装统一工具链。</span></div>
-          <div data-lang="en"><b>Install Vite+</b><span>Install the unified toolchain globally.</span></div>
-          <pre>npm install -g vite-plus</pre>
-        </span>
-      </li>
-      <li>
-        <span class="n">2</span>
-        <span class="body">
-          <div data-lang="cn" class="active"><b>交互式创建</b><span>运行创建命令，选择想要的模板。</span></div>
-          <div data-lang="en"><b>Create Interactively</b><span>Run the create command and pick your template.</span></div>
-          <pre>vp create @brandonxiang</pre>
-        </span>
-      </li>
-      <li>
-        <span class="n">3</span>
-        <span class="body">
-          <div data-lang="cn" class="active"><b>或指定模板</b><span>跳过选择，直接指定模板名称。</span></div>
-          <div data-lang="en"><b>Or Target a Template</b><span>Skip the picker and scaffold a specific template directly.</span></div>
-          <pre>vp create @brandonxiang:viteplus-antd my-admin
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <thead>
+              <tr>
+                <th><span data-lang="cn">能力</span><span data-lang="en">Capability</span></th>
+                <th>Antd SPA</th>
+                <th>Antd SSR</th>
+                <th>Antd Mobile</th>
+                <th>Fastify</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span data-lang="cn">React 19</span><span data-lang="en">React 19</span></td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">Ant Design 6</span><span data-lang="en">Ant Design 6</span>
+                </td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">antd-mobile</span><span data-lang="en">antd-mobile</span>
+                </td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+              </tr>
+              <tr>
+                <td><span data-lang="cn">SSR / SSG</span><span data-lang="en">SSR / SSG</span></td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">移动端优先</span><span data-lang="en">Mobile-first</span>
+                </td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">Fastify 服务端</span
+                  ><span data-lang="en">Fastify Server</span>
+                </td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">Swagger / OpenAPI</span
+                  ><span data-lang="en">Swagger / OpenAPI</span>
+                </td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">数据库集成</span><span data-lang="en">Database (Knex)</span>
+                </td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">Redis 缓存</span><span data-lang="en">Redis Cache</span>
+                </td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">Vitest 测试</span><span data-lang="en">Vitest Setup</span>
+                </td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+                <td class="check">✓</td>
+              </tr>
+              <tr>
+                <td>
+                  <span data-lang="cn">Lighthouse 100</span
+                  ><span data-lang="en">Lighthouse 100</span>
+                </td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="dash">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== Workflow / Install ========== -->
+      <section>
+        <div data-lang="cn" class="active">
+          <h2 class="section-title">快速开始</h2>
+          <p class="section-lede">使用 Vite+ 的统一 CLI，一条命令创建项目，运行即可。</p>
+        </div>
+        <div data-lang="en">
+          <h2 class="section-title">Getting Started</h2>
+          <p class="section-lede">
+            Create a project with one command using the Vite+ unified CLI, then run it immediately.
+          </p>
+        </div>
+
+        <ol class="workflow-steps">
+          <li>
+            <span class="n">1</span>
+            <span class="body">
+              <div data-lang="cn" class="active">
+                <b>安装 Vite+</b><span>全局安装统一工具链。</span>
+              </div>
+              <div data-lang="en">
+                <b>Install Vite+</b><span>Install the unified toolchain globally.</span>
+              </div>
+              <pre>npm install -g vite-plus</pre>
+            </span>
+          </li>
+          <li>
+            <span class="n">2</span>
+            <span class="body">
+              <div data-lang="cn" class="active">
+                <b>交互式创建</b><span>运行创建命令，选择想要的模板。</span>
+              </div>
+              <div data-lang="en">
+                <b>Create Interactively</b
+                ><span>Run the create command and pick your template.</span>
+              </div>
+              <pre>vp create @brandonxiang</pre>
+            </span>
+          </li>
+          <li>
+            <span class="n">3</span>
+            <span class="body">
+              <div data-lang="cn" class="active">
+                <b>或指定模板</b><span>跳过选择，直接指定模板名称。</span>
+              </div>
+              <div data-lang="en">
+                <b>Or Target a Template</b
+                ><span>Skip the picker and scaffold a specific template directly.</span>
+              </div>
+              <pre>
+vp create @brandonxiang:viteplus-antd my-admin
 vp create @brandonxiang:viteplus-antd-ssr my-ssr-app
 vp create @brandonxiang:viteplus-antd-mobile my-mobile
-vp create @brandonxiang:viteplus-fastify my-api</pre>
-        </span>
-      </li>
-      <li>
-        <span class="n">4</span>
-        <span class="body">
-          <div data-lang="cn" class="active"><b>启动开发服务</b><span>进入项目目录，安装依赖，开始开发。</span></div>
-          <div data-lang="en"><b>Start Developing</b><span>Enter the project directory, install, and launch the dev server.</span></div>
-          <pre>cd my-admin
+vp create @brandonxiang:viteplus-fastify my-api</pre
+              >
+            </span>
+          </li>
+          <li>
+            <span class="n">4</span>
+            <span class="body">
+              <div data-lang="cn" class="active">
+                <b>启动开发服务</b><span>进入项目目录，安装依赖，开始开发。</span>
+              </div>
+              <div data-lang="en">
+                <b>Start Developing</b
+                ><span>Enter the project directory, install, and launch the dev server.</span>
+              </div>
+              <pre>
+cd my-admin
 vp install
-vp dev</pre>
-        </span>
-      </li>
-    </ol>
-  </section>
+vp dev</pre
+              >
+            </span>
+          </li>
+        </ol>
+      </section>
 
-  <!-- ========== FAQ ========== -->
-  <section>
-    <div data-lang="cn" class="active">
-      <h2 class="section-title">常见问题</h2>
-      <p class="section-lede">关于模板目录的快速解答。</p>
-    </div>
-    <div data-lang="en">
-      <h2 class="section-title">FAQ</h2>
-      <p class="section-lede">Quick answers about the template catalog.</p>
-    </div>
+      <!-- ========== FAQ ========== -->
+      <section>
+        <div data-lang="cn" class="active">
+          <h2 class="section-title">常见问题</h2>
+          <p class="section-lede">关于模板目录的快速解答。</p>
+        </div>
+        <div data-lang="en">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-lede">Quick answers about the template catalog.</p>
+        </div>
 
-    <dl class="faq-list">
+        <dl class="faq-list">
+          <div class="faq-pair">
+            <div data-lang="cn" class="active">
+              <dt>这些模板适合生产环境吗？</dt>
+              <dd>
+                是的。每个模板都经过 <code>vp check</code> 和 <code>vp test</code> 验证，Lighthouse
+                达到满分基线，TypeScript 严格模式，适合直接用于生产项目。
+              </dd>
+            </div>
+            <div data-lang="en">
+              <dt>Are these templates production-ready?</dt>
+              <dd>
+                Yes. Every template passes <code>vp check</code> and <code>vp test</code>, achieves
+                a Lighthouse 100 baseline, uses strict TypeScript, and is designed for production
+                use from day one.
+              </dd>
+            </div>
+          </div>
 
-      <div class="faq-pair">
-        <div data-lang="cn" class="active"><dt>这些模板适合生产环境吗？</dt>
-        <dd>是的。每个模板都经过 <code>vp check</code> 和 <code>vp test</code> 验证，Lighthouse 达到满分基线，TypeScript 严格模式，适合直接用于生产项目。</dd></div>
-        <div data-lang="en"><dt>Are these templates production-ready?</dt>
-        <dd>Yes. Every template passes <code>vp check</code> and <code>vp test</code>, achieves a Lighthouse 100 baseline, uses strict TypeScript, and is designed for production use from day one.</dd></div>
-      </div>
+          <div class="faq-pair">
+            <div data-lang="cn" class="active">
+              <dt>Vite+ 和 Vite 有什么区别？</dt>
+              <dd>
+                Vite+ 是在 Vite 基础上构建的统一工具链，封装了 Rolldown、Vitest、Oxlint、Oxfmt，提供
+                <code>vp dev</code>、<code>vp build</code>、<code>vp check</code>、<code
+                  >vp test</code
+                >
+                等统一命令。
+              </dd>
+            </div>
+            <div data-lang="en">
+              <dt>What's the difference between Vite+ and Vite?</dt>
+              <dd>
+                Vite+ is a unified toolchain built on Vite, wrapping Rolldown, Vitest, Oxlint, and
+                Oxfmt into a single CLI. Commands like <code>vp dev</code>, <code>vp build</code>,
+                <code>vp check</code>, and <code>vp test</code> replace multiple tools with one
+                interface.
+              </dd>
+            </div>
+          </div>
 
-      <div class="faq-pair">
-        <div data-lang="cn" class="active"><dt>Vite+ 和 Vite 有什么区别？</dt>
-        <dd>Vite+ 是在 Vite 基础上构建的统一工具链，封装了 Rolldown、Vitest、Oxlint、Oxfmt，提供 <code>vp dev</code>、<code>vp build</code>、<code>vp check</code>、<code>vp test</code> 等统一命令。</dd></div>
-        <div data-lang="en"><dt>What's the difference between Vite+ and Vite?</dt>
-        <dd>Vite+ is a unified toolchain built on Vite, wrapping Rolldown, Vitest, Oxlint, and Oxfmt into a single CLI. Commands like <code>vp dev</code>, <code>vp build</code>, <code>vp check</code>, and <code>vp test</code> replace multiple tools with one interface.</dd></div>
-      </div>
+          <div class="faq-pair">
+            <div data-lang="cn" class="active">
+              <dt>可以同时使用多个模板吗？</dt>
+              <dd>
+                当然。模板彼此独立，你可以在一个项目中混合使用 Antd 后台和 Fastify
+                服务端。它们共用同一个 Vite+ 工具链，开发者体验一致。
+              </dd>
+            </div>
+            <div data-lang="en">
+              <dt>Can I use multiple templates together?</dt>
+              <dd>
+                Absolutely. Templates are independent. You could pair an Antd SPA frontend with a
+                Fastify backend — they share the same Vite+ toolchain for a consistent developer
+                experience.
+              </dd>
+            </div>
+          </div>
 
-      <div class="faq-pair">
-        <div data-lang="cn" class="active"><dt>可以同时使用多个模板吗？</dt>
-        <dd>当然。模板彼此独立，你可以在一个项目中混合使用 Antd 后台和 Fastify 服务端。它们共用同一个 Vite+ 工具链，开发者体验一致。</dd></div>
-        <div data-lang="en"><dt>Can I use multiple templates together?</dt>
-        <dd>Absolutely. Templates are independent. You could pair an Antd SPA frontend with a Fastify backend — they share the same Vite+ toolchain for a consistent developer experience.</dd></div>
-      </div>
+          <div class="faq-pair">
+            <div data-lang="cn" class="active">
+              <dt>如何提交 Issue 或贡献？</dt>
+              <dd>
+                请访问
+                <a
+                  href="https://github.com/brandonxiang/viteplus-collections"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub 仓库</a
+                >
+                提交 Issue 或 Pull Request。我们欢迎社区贡献。
+              </dd>
+            </div>
+            <div data-lang="en">
+              <dt>How do I submit an issue or contribute?</dt>
+              <dd>
+                Visit the
+                <a
+                  href="https://github.com/brandonxiang/viteplus-collections"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub repository</a
+                >
+                to open issues or submit pull requests. Community contributions are welcome.
+              </dd>
+            </div>
+          </div>
+        </dl>
+      </section>
 
-      <div class="faq-pair">
-        <div data-lang="cn" class="active"><dt>如何提交 Issue 或贡献？</dt>
-        <dd>请访问 <a href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub 仓库</a> 提交 Issue 或 Pull Request。我们欢迎社区贡献。</dd></div>
-        <div data-lang="en"><dt>How do I submit an issue or contribute?</dt>
-        <dd>Visit the <a href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub repository</a> to open issues or submit pull requests. Community contributions are welcome.</dd></div>
-      </div>
+      <!-- ========== Footer ========== -->
+      <footer class="foot">
+        <div class="mark">
+          <img
+            src="https://raw.githubusercontent.com/brandonxiang/viteplus-collections/master/assets/logo.svg"
+            alt="VitePlus Collections"
+          />
+          <span class="wm-name">VitePlus<br />Collections</span>
+          <span class="wm-line" data-lang="cn">开箱即用的模板目录</span>
+          <span class="wm-line" data-lang="en">Production-ready template catalog</span>
+        </div>
+        <div class="colophon">
+          <div class="links">
+            <a
+              href="https://github.com/brandonxiang/viteplus-collections"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            ·
+            <a
+              href="https://github.com/brandonxiang/viteplus-collections/issues"
+              target="_blank"
+              rel="noopener"
+              >Issues</a
+            >
+            ·
+            <a href="https://viteplus.dev/" target="_blank" rel="noopener">Vite+</a>
+          </div>
+          <p class="ethos" data-lang="cn">好的工具链，好的起点。</p>
+          <p class="ethos" data-lang="en">Good toolchain, great start.</p>
+        </div>
+      </footer>
+    </main>
 
-    </dl>
-  </section>
+    <script>
+      (function () {
+        var btns = document.querySelectorAll('[data-lang-btn]');
+        var els = document.querySelectorAll('[data-lang]');
+        var lang = localStorage.getItem('kami-lang') || 'cn';
 
-  <!-- ========== Footer ========== -->
-  <footer class="foot">
-    <div class="mark">
-      <img src="https://raw.githubusercontent.com/brandonxiang/viteplus-collections/master/assets/logo.svg" alt="VitePlus Collections">
-      <span class="wm-name">VitePlus<br>Collections</span>
-      <span class="wm-line" data-lang="cn">开箱即用的模板目录</span>
-      <span class="wm-line" data-lang="en">Production-ready template catalog</span>
-    </div>
-    <div class="colophon">
-      <div class="links">
-        <a href="https://github.com/brandonxiang/viteplus-collections" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="https://github.com/brandonxiang/viteplus-collections/issues" target="_blank" rel="noopener">Issues</a> ·
-        <a href="https://viteplus.dev/" target="_blank" rel="noopener">Vite+</a>
-      </div>
-      <p class="ethos" data-lang="cn">好的工具链，好的起点。</p>
-      <p class="ethos" data-lang="en">Good toolchain, great start.</p>
-    </div>
-  </footer>
+        function apply(l) {
+          lang = l;
+          els.forEach(function (el) {
+            var match = el.getAttribute('data-lang') === l;
+            if (el.tagName === 'SPAN') {
+              el.style.display = match ? 'inline' : 'none';
+            } else {
+              el.style.display = match ? '' : 'none';
+            }
+            el.classList.toggle('active', match);
+            el.classList.toggle('active-inline', match && el.tagName === 'SPAN');
+          });
+          btns.forEach(function (btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === l);
+          });
+          localStorage.setItem('kami-lang', l);
+          document.documentElement.lang = l === 'cn' ? 'zh-CN' : 'en';
+        }
 
-</main>
+        btns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            apply(btn.getAttribute('data-lang-btn'));
+          });
+        });
 
-<script>
-(function() {
-  var btns = document.querySelectorAll('[data-lang-btn]');
-  var els = document.querySelectorAll('[data-lang]');
-  var lang = localStorage.getItem('kami-lang') || 'cn';
+        apply(lang);
 
-  function apply(l) {
-    lang = l;
-    els.forEach(function(el) {
-      var match = el.getAttribute('data-lang') === l;
-      if (el.tagName === 'SPAN') {
-        el.style.display = match ? 'inline' : 'none';
-      } else {
-        el.style.display = match ? '' : 'none';
-      }
-      el.classList.toggle('active', match);
-      el.classList.toggle('active-inline', match && el.tagName === 'SPAN');
-    });
-    btns.forEach(function(btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === l);
-    });
-    localStorage.setItem('kami-lang', l);
-    document.documentElement.lang = l === 'cn' ? 'zh-CN' : 'en';
-  }
-
-  btns.forEach(function(btn) {
-    btn.addEventListener('click', function() { apply(btn.getAttribute('data-lang-btn')); });
-  });
-
-  apply(lang);
-
-  // Matrix uses inline <span> for bilingual cells — already covered by the loop above
-})();
-</script>
-</body>
+        // Matrix uses inline <span> for bilingual cells — already covered by the loop above
+      })();
+    </script>
+  </body>
 </html>

@@ -15,28 +15,28 @@
     "test:coverage": "vp test run --coverage"
   },
   "dependencies": {
-    "@ant-design/icons": "^6.2.2",
+    "@ant-design/icons": "^6.3.2",
     "@antv/g2": "^5.4.8",
-    "@react-router/node": "^7.15.0",
-    "antd": "^6.3.7",
-    "isbot": "^5.1.40",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "react-router": "^7.15.0"
+    "@react-router/node": "^8.2.0",
+    "antd": "^6.5.1",
+    "isbot": "^5.2.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8.2.0"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.15.0",
+    "@react-router/dev": "^8.2.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@types/node": "^25.6.2",
-    "@types/react": "^19.2.14",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "globals": "^17.6.0",
+    "globals": "^17.7.0",
     "jsdom": "^29.1.1",
-    "sass": "^1.99.0",
-    "typescript": "^6.0.3",
-    "vite": "^8.0.11",
-    "vite-plus": "0.1.24"
+    "sass": "^1.101.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5",
+    "vite-plus": "0.2.4"
   },
   "packageManager": "pnpm@10.32.1"
 }

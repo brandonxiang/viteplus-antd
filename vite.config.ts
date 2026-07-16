@@ -9,7 +9,6 @@ export default defineConfig({
     singleQuote: true,
   },
   lint: {
-    ignorePatterns: ['node_modules/', 'dist/', 'build/', '**/.react-router/**'],
     options: {
       typeAware: true,
       typeCheck: true,

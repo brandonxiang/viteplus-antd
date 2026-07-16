@@ -20,27 +20,12 @@ export default defineConfig({
   },
   fmt: {
     singleQuote: true,
-    ignorePatterns: ['.react-router/**', 'build/**', 'dist/**', 'node_modules/**'],
   },
   lint: {
-    env: {
-      builtin: true,
+    options: {
+      typeAware: true,
+      typeCheck: true,
     },
-    ignorePatterns: ['.react-router/**', 'build/**', 'dist/**', 'node_modules/**'],
-    overrides: [
-      {
-        files: ['**/*.{ts,tsx}'],
-        rules: {
-          'react-hooks/rules-of-hooks': 'error',
-          'react-hooks/exhaustive-deps': 'warn',
-        },
-        env: {
-          es2020: true,
-          browser: true,
-        },
-        plugins: ['react'],
-      },
-    ],
   },
   staged: {
     '*.{js,jsx,ts,tsx}': ['vp lint --fix', 'vp fmt'],

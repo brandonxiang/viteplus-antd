@@ -14,3 +14,17 @@ Docs are local at `node_modules/vite-plus/docs` or online at https://viteplus.de
 - [ ] If setup, runtime, or package-manager behavior looks wrong, run `vp env doctor` and include its output when asking for help.
 
 <!--VITE PLUS END-->
+
+## Starter Extension Notes
+
+When extending this starter, begin with the shared catalog recipes:
+https://github.com/brandonxiang/viteplus-collections/blob/main/docs/recipes.md
+
+If setup, dependency, or runtime behavior looks off, check the troubleshooting guide:
+https://github.com/brandonxiang/viteplus-collections/blob/main/docs/troubleshooting.md
+
+Before handing off changes, run:
+
+- `vp install`
+- `vp check`
+- `vp test`

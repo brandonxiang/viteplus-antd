@@ -51,7 +51,7 @@ const todoLoader = async () => {
   // Example: return fetch('/api/todos').then(res => res.json());
   return {
     todos: [
-      { id: 1, text: 'Learn React Router v7', completed: false },
+      { id: 1, text: 'Learn React Router v8', completed: false },
       { id: 2, text: 'Implement data mode', completed: true },
     ],
   };
